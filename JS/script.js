@@ -26,12 +26,19 @@
         render();
     }
 
+    // Funkcja zmieniająca status zadania na zrobione
+    const toggleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+        render();
+    }
+
     // Funkcja do renderowania listy zadań
     const render = () => {
         let htmlString = "";
         for (const [index, task] of tasks.entries()) {
             htmlString += `
                 <li${task.done ? " style=\"text-decoration: line-through;\"" : ""}> 
+                    <button class="js-done" data-index="${index}">Zadanie zrobione</button>
                     <button class="js-remove" data-index="${index}">Usuń</button>
                     ${task.content}
                 </li>`;
@@ -44,6 +51,15 @@
             button.addEventListener("click", (event) => {
                 const taskIndex = event.target.dataset.index;
                 removeTask(taskIndex);
+            });
+        });
+
+        // Przycisk oznaczający zadanie jako zrobione
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+        toggleDoneButtons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+                const taskIndex = event.target.dataset.index;
+                toggleTaskDone(taskIndex);
             });
         });
     };
