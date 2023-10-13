@@ -44,7 +44,10 @@
                 </li>`;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+        bindEvents(); // Dodane wywołanie funkcji bindEvents
+    };
 
+    const bindEvents = () => {
         // Przycisk usuwający dany task
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((button) => {
