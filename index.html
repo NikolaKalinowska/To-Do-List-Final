@@ -9,30 +9,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script defer src="JS/script.js"></script>
     <link href="CSS/style.css" rel="stylesheet">
-    <link href="CSS/section.css" rel="stylesheet">
 </head>
 
 <body class="body">
-    <section class="section1">
-        <h1 class="section_header">Lista zadań</h1>
-        <form class="js-form">
-            <div class="section__item>
-         <legend class=" form_legend"> Dodaj nowe zadanie</legend>
-            </div>
-            <div class="section__item form__flex">
-            <input class="js-newTask form_input" type="text" id="new-task" placeholder="Co jest do zrobienia?" autofocus>
-            <button class="button" id="add-task">Dodaj zadanie</button>
+    <div class="container">
+        <div class="title">
+            <h1>Lista zadań</h1>
         </div>
-        </form>
-    </section>
 
-    <section class="section2">
-        <div class="section__flex section__item">
-            <h2 class="section__header">Lista zadań</h2>
-            <span class="js-buttons section__button"></span>
-        </div>
-            <ul class="js-tasks section__item"></ul>
-    </section>
+        <section class="section">
+            <div class="section__title form__legend">Dodaj nowe zadanie</div>
+            <form class="js-form form">
+                <div class="section__body form__flex">
+                    <input class="js-newTask form__input" type="text" id="new-task" placeholder="Co jest do zrobienia?" autofocus>
+                    <button class="form__button button" id="add-task">Dodaj zadanie</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="section">
+            <div class="section__flex section__item">
+                <h2 class="section__header">Lista zadań</h2>
+                <span class="js-buttons section__button"></span>
+            </div>
+            <ul class="js-tasks tasks section__item"></ul>
+        </section>
+    </div>
 </body>
 
 </html>

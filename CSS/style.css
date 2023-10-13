@@ -1,17 +1,14 @@
-html {
-    box-sizing: border-box;
-    font-family: "Geologica", sans-serif;
-}
-
-*, ::after, ::before {
-    box-sizing: inherit;
-}
 .body {
-    max-width: 1000px;
-    width: 100%;
-    margin-top: 5px ;
-    padding: 40px;
-    background-color: hsl(0, 0%, 95%);
-    margin: auto;
-
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(27 27 27 / 8%);
+}
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 22px;
+}
+.section {
+    background: white;
+    margin: 22px 0;
+    box-shadow: 0 0 7px #ddd;
 }
