@@ -4,31 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>  
+    <title>To Do List</title>
     <link href="CSS/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script defer src="JS/script.js"></script>
     <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/section.css" rel="stylesheet">
 </head>
 
 <body class="body">
-    <header class="header">Lista zadań</header>
-<section class="section1">
-    <div>
-        <h1 class="h1">Dodaj nowe zadanie</h1>
-    </div>
-    <form class="js-form">
-        <input class="js-newTask" type="text" id="new-task" placeholder="Co jest do zrobienia?">
-        <button class="button" id="add-task">Dodaj zadanie</button>
-    </form>
-</section>
+    <section class="section1">
+        <h1 class="section_header">Lista zadań</h1>
+        <form class="js-form">
+            <div class="section__item>
+         <legend class=" form_legend"> Dodaj nowe zadanie</legend>
+            </div>
+            <div class="section__item form__flex">
+            <input class="js-newTask form_input" type="text" id="new-task" placeholder="Co jest do zrobienia?" autofocus>
+            <button class="button" id="add-task">Dodaj zadanie</button>
+        </div>
+        </form>
+    </section>
 
     <section class="section2">
-    <div class="task-list-container">
-        <h1>Lista zadań</h1>
-        <ul class="js-tasks"></ul>
-    </div>
-</section>
+        <div class="section__flex section__item">
+            <h2 class="section__header">Lista zadań</h2>
+            <span class="js-buttons section__button"></span>
+        </div>
+            <ul class="js-tasks section__item"></ul>
+    </section>
 </body>
 
 </html>
