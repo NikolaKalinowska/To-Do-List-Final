@@ -1,42 +1,55 @@
 @media (max-width: 767px) {
     .form {
         grid-template-columns: 1fr;
-        }
     }
+}
+
 .body {
     font-family: 'Montserrat', sans-serif;
     background: rgb(27 27 27 / 8%);
 }
-.section__title{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;;
-}
-.js-newTask{
-    width: 80%;
-}
+
 .container {
     max-width: 950px;
     margin: 0 auto;
     padding: 22px;
 }
+
+
+
 .section {
     background: white;
     margin: 22px 0;
     box-shadow: 0 0 7px #ddd;
 }
+.section2{
+    background: white;
+    margin: 22px 0;
+    box-shadow: 0 0 7px #ddd;
+}
+
 .section__title {
     font-size: 22px;
     padding: 22px;
     border-bottom: 1px solid #d2d2d2;
 }
+
+.section__header{
+    padding: 22px;
+    border-bottom: 1px solid #d2d2d2;
+}
+
 .section__body {
     padding: 22px;
 }
+
 .form__input {
     padding: 10px;
     font-size: 16px;
+    width: 80%;
 }
-.form__button{
+
+.form__button {
     border: none;
     font-size: 16px;
     background: teal;
@@ -45,6 +58,7 @@
     cursor: pointer;
     padding: 10px;
 }
+
 .form__button:hover {
     background: rgb(17, 168, 168);
 }
@@ -63,9 +77,11 @@
     padding: 10px;
     border-bottom: 1px solid #ddd;
 }
+
 .tasks__item--checked {
     text-decoration: line-through;
-   }
+}
+
 .task__button {
     background-color: #1dbe1d;
     color: white;
@@ -79,16 +95,17 @@
     background: #2de62d;
 }
 
-.toggle__button--cheked {
+.toggle__button--checked {
     background: #1dbe1d;
 }
+
 .remove__button {
     background-color: red;
     color: white;
     border: none;
     cursor: pointer;
     min-width: 30px;
-    min-height: 30px
+    min-height: 30px;
 }
 
 .remove__button:hover {
