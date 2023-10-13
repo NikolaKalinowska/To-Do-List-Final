@@ -7,21 +7,9 @@
         },
         {
             content: "test",
-            done: true, 
+            done: true,
         },
     ];
-
-    // Funkcja do renderowania listy zadań
-    const render = () => {
-        let htmlString = "";
-        for (const task of tasks) {
-            htmlString += `
-                <li${task.done ? " style=\"text-decoration: line-through;\"" : ""}> 
-                    ${task.content}
-                </li>`;
-        }
-        document.querySelector(".js-tasks").innerHTML = htmlString;
-    };
 
     // Funkcja dodająca nowe zadanie
     const addNewTask = (newTaskContent) => {
@@ -32,11 +20,38 @@
         render();
     }
 
+    // Funkcja usuwająca dane zadanie
+    const removeTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1);
+        render();
+    }
+
+    // Funkcja do renderowania listy zadań
+    const render = () => {
+        let htmlString = "";
+        for (const [index, task] of tasks.entries()) {
+            htmlString += `
+                <li${task.done ? " style=\"text-decoration: line-through;\"" : ""}> 
+                    <button class="js-remove" data-index="${index}">Usuń</button>
+                    ${task.content}
+                </li>`;
+        }
+        document.querySelector(".js-tasks").innerHTML = htmlString;
+
+        // Przycisk usuwający dany task
+        const removeButtons = document.querySelectorAll(".js-remove");
+        removeButtons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+                const taskIndex = event.target.dataset.index;
+                removeTask(taskIndex);
+            });
+        });
+    };
+
     const onFormSubmit = (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
-        console.log(newTaskContent)
 
         if (newTaskContent === "") {
             return;
@@ -50,6 +65,7 @@
 
         // Dodanie obsługi formularza
         const form = document.querySelector(".js-form");
+
         form.addEventListener("submit", onFormSubmit); // Dodanie obsługi zdarzenia "submit"
     };
 
