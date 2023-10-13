@@ -32,24 +32,25 @@
         render();
     }
 
+    const onFormSubmit = (event) => {
+        event.preventDefault(); 
+
+        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        console.log(newTaskContent)
+
+        if (newTaskContent === "") {
+            return;
+        }
+        addNewTask(newTaskContent); // Dodanie nowego zadania
+    };
+
     // Funkcja inicjalizacyjna
     const init = () => {
         render();
 
         // Dodanie obsługi formularza
         const form = document.querySelector(".js-form");
-
-        form.addEventListener("submit", (event) => {
-            event.preventDefault(); 
-
-            const newTaskContent = document.querySelector(".js-newTask").value.trim();
-            console.log(newTaskContent)
-
-            if (newTaskContent === "") {
-                return;
-            }
-            addNewTask(newTaskContent); // Dodanie nowego zadania
-        });
+        form.addEventListener("submit", onFormSubmit); // Dodanie obsługi zdarzenia "submit"
     };
 
     // Inicjalizacja
