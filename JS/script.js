@@ -7,7 +7,7 @@ const tasks = [
     },
     {
         content: "test",
-        done: true,
+        done: false,
     },
 ];
 
