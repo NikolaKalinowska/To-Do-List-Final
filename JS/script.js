@@ -37,11 +37,15 @@ const render = () => {
     let htmlString = "";
     for (const [index, task] of tasks.entries()) {
         htmlString += `
-            <li${task.done ? " style=\"text-decoration: line-through;\"" : ""}> 
-                <button class="js-done" data-index="${index}">Zadanie zrobione</button>
-                <button class="js-remove" data-index="${index}">Usuń</button>
+        <li class="tasks__item">
+            <button class="task__button js-done ${task.done ? "toggle__button--checked" : ""}">
+                ${task.done ? "✓" : " "}
+            </button>
+            <span class="tasks__content ${task.done ? "tasks__item--checked" : ""}">
                 ${task.content}
-            </li>`;
+            </span>
+            <button class="remove__button js-remove">🗑</button>
+        </li>`;
     }
     document.querySelector(".js-tasks").innerHTML = htmlString;
 
