@@ -1,5 +1,5 @@
 {
-    // Tablica zadan
+    // Tablica zadań
     const tasks = [
         {
             content: "test",
@@ -23,6 +23,15 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
 
+    // Funkcja dodająca nowe zadanie
+    const addNewTask = (newTaskContent) => {
+        tasks.push({
+            content: newTaskContent,
+            done: false
+        });
+        render();
+    }
+
     // Funkcja inicjalizacyjna
     const init = () => {
         render();
@@ -39,6 +48,7 @@
             if (newTaskContent === "") {
                 return;
             }
+            addNewTask(newTaskContent); // Dodanie nowego zadania
         });
     };
 
